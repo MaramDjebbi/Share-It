@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing</title>
+    <link rel="stylesheet" href="file-sharing.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- File Sharing Screen -->
+        <div class="screen fs-screen active">
+            <div class="file-input">
+                <label for="file-input" class="file-label">
+                    Click here to select a file for sharing.
+                </label>
+                <input type="file" id="file-input" class="file-input-field">
+            </div>
+
+            <!-- Display file details -->
+            <div class="files-list">
+                <div class="title">Shared File</div>
+                <!-- List of files will be displayed here -->
+            </div>
+
+            <div class="form-input">
+                <button id="sender-start-con-btn" class="btn primary-btn">Upload File</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+    <script src="receiver.js"></script>
+</body>
+
+</html>

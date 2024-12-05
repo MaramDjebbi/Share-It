@@ -100,3 +100,26 @@ form {
         padding: 10px 20px;
     }
 }
+
+.inline-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Add spacing between elements */
+  }
+  
+  .inline-container h4 {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .signup-link {
+    color: blue; /* Make text blue */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Optional: Make it bold */
+    cursor: pointer; /* Show pointer on hover */
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

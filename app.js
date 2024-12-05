@@ -5,12 +5,15 @@ import { Server } from "socket.io";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js"; // Import auth routes
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
 const PORT = 5000 ;
 
+// Enable CORS for all origins
+app.use(cors());
 // Configure Server Path name
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

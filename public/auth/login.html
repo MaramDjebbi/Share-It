@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+      <img src="../../assets/logo-ShareIt.png" alt="App Logo" class="app-logo">
+    </header>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Enter your Email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="primary-btn">Login</button>
+        <div class="inline-container">
+          <h4>First time?</h4>
+          <a href="signUp.html" class="signup-link">Sign Up</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("login-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          const response = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }), 
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            alert("Login successful!");
+            console.log("JWT:", data.token);
+          } else {
+            alert(data.message || "Login failed");
+          }
+        } catch (error) {
+          console.error("Error during login:", error);
+          alert("Server error");
+        }
+      });
+    </script>
+</body>
+
+</html>

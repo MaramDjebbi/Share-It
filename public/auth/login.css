@@ -123,3 +123,42 @@ form {
     text-decoration: underline; /* Underline on hover */
   }
   
+
+
+
+
+
+  .header-container {
+    margin-right: 350px;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Optional: Horizontal centering */
+    flex-direction: column; /* Ensures the items stack vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text inside the div */
+  }
+  
+  .app-logo {
+    width: 600px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Adds spacing between logo and text */
+  }
+  
+  .header-text h1 {
+    margin: 10px 0; /* Adjust spacing between lines */
+  }
+
+
+
+
+
+
+  .logo-signin {
+    margin-top: 0px;
+    margin-left: 130px;
+    width: 130px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Adds spacing between logo and text */
+
+  }
+
+  
+  

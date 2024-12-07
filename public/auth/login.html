@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <title>Share It</title>
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
   
     <div class="login-container">
-      <img src="../../assets/logooo.png" class="logo-signin">
+      <img src="/assets/logooo.png" class="logo-signin">
       <h2>Login</h2>
       <form id="login-form">
         <div class="form-group">
@@ -50,7 +51,9 @@
 
           if (response.ok) {
             alert("Login successful!");
+            localStorage.setItem("username", data.username);
             console.log("JWT:", data.token);
+            window.location.href = "../first.html";
           } else {
             alert(data.message || "Login failed");
           }

@@ -3,8 +3,39 @@ const createRoomBtn = document.getElementById("sender-start-con-btn");
 const selectedFile = document.getElementById("file-input");
 const allFiles = document.querySelector(".files-list");
 const receiverButton = document.getElementById("receiver-start-con-btn");
+
+
+// Display the username
+document.addEventListener("DOMContentLoaded", () => {
+  const username = localStorage.getItem("username");
+  const usernameDisplay = document.getElementById("username-display");
+  
+  if (username) {
+    usernameDisplay.textContent = username;
+  } else {
+    // Redirect to login if username is not found
+    window.location.href = "./login.html";
+  }
+});
+
+
+//logout
+document.getElementById("logout-btn").addEventListener("click", () => {
+  // Clear user-related data
+  localStorage.removeItem("username");
+  localStorage.removeItem("token");
+
+  // Redirect to the login page
+  window.location.href = "auth/login.html";
+});
+
+
+
+
 const socket = io();
 let receiverId;
+
+
 
 //! Required Functions
 // RandomId Generator

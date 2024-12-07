@@ -128,3 +128,53 @@ h2 {
   margin-top: 5px;
   border-radius: 8px;
 }
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Light gray background */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 40px; /* Adjust as needed */
+}
+
+
+.username {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.logout-btn {
+  position: absolute; /* To position it in the top-right */
+  top: 10px; /* Adjust as needed */
+  right: 50px; /* Adjust as needed */
+  background-color: #ff4d4d; /* Red button for visibility */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  
+}
+
+.logout-btn:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}

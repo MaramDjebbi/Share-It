@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create and save the new user
-    const user = new User({ username, email, password });
+    const user = new User({ username, email, password: password  });
     await user.save();
     res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
@@ -52,7 +52,11 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-    res.json({ token, message: "Login successful" });
+    res.json({ 
+      username: user.username,
+      token, 
+      message: "Login successful" 
+    });
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err.message });
 }
